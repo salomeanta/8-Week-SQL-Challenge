@@ -1,7 +1,7 @@
 --1)Her müşterinin restoranda harcadığı toplam tutar nedir?
 --What is the total amount each customer spent at the restaurant?
 select customer_id,
-sum(price)
+sum(price) as total_sales
 from menu as  m
 left join sales as s on m.product_id = s.product_id
 group by 1
