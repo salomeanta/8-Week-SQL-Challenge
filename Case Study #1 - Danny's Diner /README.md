@@ -1,4 +1,4 @@
-# Case Study #1 - Danny's Diner 
+# Case Study #1 - Danny's Diner :ramen:
 
 <img src="https://user-images.githubusercontent.com/98699089/156034616-ef978d44-af18-4e54-9885-1ac376a009bf.png" width="500">
 
