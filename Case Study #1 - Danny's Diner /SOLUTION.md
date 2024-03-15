@@ -11,7 +11,7 @@ Full description: [Case Study #1 - Danny's Diner](https://8weeksqlchallenge.com/
 Each of the following case study questions can be answered using a single SQL statement. I'll mostly use two queries for convenience purposes.
 
 ### 1.What is the total amount each customer spent at the restaurant?
-#### *Her müşterinin restoranda harcadığı toplam tutar nedir?*
+*Her müşterinin restoranda harcadığı toplam tutar nedir?*
 ```sql
 select customer_id,
 sum(price) as total_spent
