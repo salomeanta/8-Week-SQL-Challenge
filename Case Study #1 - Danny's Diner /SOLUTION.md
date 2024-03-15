@@ -74,7 +74,7 @@ GROUP BY
 | C           | ramen        | 
 ---
 ### 4.What is the most purchased item on the menu and how many times was it purchased by all customers?
-#### *4.Menüde en çok satın alınan ürün hangisidir ve tüm müşteriler tarafından kaç kez satın alınmıştır?*
+
 ```sql
 select m.product_name,
 count(s.product_id) as total_purchase_quantity
