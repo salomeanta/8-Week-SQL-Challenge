@@ -71,7 +71,7 @@ The final members table captures the `join_date` when a `customer_id` joined the
 
 [3. What was the first item from the menu purchased by each customer?](https://github.com/salomeanta/8_Week_SQL_Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#3-what-was-the-first-item-from-the-menu-purchased-by-each-customer)
 
-[4. What is the most purchased item on the menu and how many times was it purchased by all customers?](https://github.com/salomeanta/8_Week_SQL_Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#4-what-is-the-most-purchased-item-on-the-menu-and-how-many-times-was-it-purchased-by-all-customers)
+[4.What is the most purchased item on the menu and how many times was it purchased by all customers?](https://github.com/salomeanta/8_Week_SQL_Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#4-what-is-the-most-purchased-item-on-the-menu-and-how-many-times-was-it-purchased-by-all-customers?)
 
 [5. Which item was the most popular for each customer?](https://github.com/salomeanta/8_Week_SQL_Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#5-which-item-was-the-most-popular-for-each-customer)
 
