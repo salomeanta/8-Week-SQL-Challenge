@@ -1,7 +1,8 @@
 # Case Study #2 - Pizza Runner ::pizza::
 
 <img src="https://user-images.githubusercontent.com/98699089/156214170-bbca7608-9291-405f-aefa-be2796fc4355.png" width="500">
-[webside](https://8weeksqlchallenge.com/case-study-2)
+
+[webside](https://8weeksqlchallenge.com/case-study-2/)
 
 Danny requires further assistance to clean his data and apply some basic calculations so he can better direct his runners and optimise Pizza Runner’s operations.
 
