@@ -1,4 +1,14 @@
+# Case Study #1 - Danny's Diner :ramen:
 
+## Problem Statement
+
+Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favourite. Having this deeper connection with his customers will help him deliver a better and more personalised experience for his loyal customers. 
+
+Full description: [Case Study #1 - Danny's Diner](https://8weeksqlchallenge.com/case-study-1/)
+
+## Case Study Questions
+
+Each of the following case study questions can be answered using a single SQL statement. I'll mostly use two queries for convenience purposes.
 
 ### 1.What is the total amount each customer spent at the restaurant?
 #### *1.Her müşterinin restoranda harcadığı toplam tutar nedir?*
