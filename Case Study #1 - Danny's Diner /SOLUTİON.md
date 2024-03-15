@@ -1,8 +1,7 @@
 
 
-
 ### 1.What is the total amount each customer spent at the restaurant?
-#### 2.Her müşterinin restoranda harcadığı toplam tutar nedir?
+#### *1.Her müşterinin restoranda harcadığı toplam tutar nedir?*
 ```sql
 select customer_id,
 sum(price) as total_spent
@@ -20,7 +19,7 @@ order by 1
 ---
 
 ### 2.How many days has each customer visited the restaurant?
-#### 2.Her müşteri restoranı kaç gün ziyaret etti?
+#### *2.Her müşteri restoranı kaç gün ziyaret etti?*
 ```sql
 select customer_id,
 count(distinct order_date) as days_of_visiting
@@ -36,7 +35,7 @@ group by 1
 ---
 
 ### 3.What was the first item from the menu purchased by each customer?
-#### 3.Her müşterinin satın aldığı menüden ilk ürün neydi?
+#### *3.Her müşterinin satın aldığı menüden ilk ürün neydi?*
 ```sql
 WITH ranking AS (
     SELECT 
@@ -65,7 +64,7 @@ GROUP BY
 | C           | ramen        | 
 ---
 ### 4.What is the most purchased item on the menu and how many times was it purchased by all customers?
-#### 4.Menüde en çok satın alınan ürün hangisidir ve tüm müşteriler tarafından kaç kez satın alınmıştır?
+#### *4.Menüde en çok satın alınan ürün hangisidir ve tüm müşteriler tarafından kaç kez satın alınmıştır?*
 ```sql
 select m.product_name,
 count(s.product_id) as total_purchase_quantity
@@ -79,7 +78,7 @@ limit 1
 | ramen        | 8                       |
 ---
 ### 5.Which item was the most popular for each customer?
-#### 5.Her müşteri için en popüler ürün hangisiydi?
+#### *5.Her müşteri için en popüler ürün hangisiydi?*
 ```sql
 WITH Popularity AS (
     SELECT
@@ -113,7 +112,7 @@ WHERE
 | C           | ramen        | 3                       |
 ---
 ### 6.Which item was purchased first by the customer after they became a member?
-#### 6.Müşteri üye olduktan sonra ilk olarak hangi ürünü satın aldı?
+#### *6.Müşteri üye olduktan sonra ilk olarak hangi ürünü satın aldı?*
 
 ```sql
 with order_ranking as (
@@ -139,7 +138,7 @@ FROM
 | B           |  sushi        |
 ---
 ### 7.Which item was purchased just before the customer became a member?
-#### 7.Müşteri üye olmadan hemen önce hangi ürün satın alındı?
+#### *7.Müşteri üye olmadan hemen önce hangi ürün satın alındı?*
 
 	``` sql
 		WITH order_ranking AS (
@@ -169,7 +168,7 @@ FROM
 | B           | sushi        |
 ---
 ### 8.What is the total items and amount spent for each member before they became a member?
-#### 8.Her üyenin üye olmadan önce harcadığı toplam kalem ve tutar nedir?
+#### *8.Her üyenin üye olmadan önce harcadığı toplam kalem ve tutar nedir?*
 ```sql
 select s.customer_id,
 sum(m.price) as total_purchase_amount,
@@ -189,7 +188,7 @@ FROM
 | B           | 3                     | 40                    |
 ---
 ### 9.If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
-#### 9.Harcanan her 1 dolar 10 puana eşitse ve suşi 2 kat puan çarpanına sahipse, her müşterinin kaç puanı olur?
+#### *9.Harcanan her 1 dolar 10 puana eşitse ve suşi 2 kat puan çarpanına sahipse, her müşterinin kaç puanı olur?*
 ```sql
 select customer_id,
 sum(case when m.product_name = 'sushi' then price*20 else price*10 end ) as points
@@ -208,7 +207,7 @@ order by 1
 | C           | 360    |
 ---
 ### 10.In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi how many points do customer A and B have at the end of January?
-#### 10.Bir müşteri programa katıldıktan sonraki ilk haftada (katılma tarihi dahil) yalnızca suşide değil,tüm yiyeceklerde 2 kat puan kazanır.A ve B müşterisi Ocak ayının sonunda kaç puana sahip olur?
+#### *10.Bir müşteri programa katıldıktan sonraki ilk haftada (katılma tarihi dahil) yalnızca suşide değil,tüm yiyeceklerde 2 kat puan kazanır.A ve B müşterisi Ocak ayının sonunda kaç puana sahip olur?*
 
 ```sql
 with data as (
