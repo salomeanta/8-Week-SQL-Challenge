@@ -60,7 +60,7 @@ The final members table captures the `join_date` when a `customer_id` joined the
 
 
 ## Table of Contents
-[Problem Statement](https://github.com/salomeanta/8-Week-SQL-Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#problem-statement)
+
 
 [Problem Statement](https://github.com/salomeanta/8-Week-SQL-Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#problem-statement)
 
