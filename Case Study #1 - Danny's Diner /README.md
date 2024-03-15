@@ -61,9 +61,9 @@ The final members table captures the `join_date` when a `customer_id` joined the
 
 ## Table of Contents
 
-[Problem Statement](https://github.com/salomeanta/8_Week_SQL_Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTİON.md/#problem-statement)
+[Problem Statement](https://github.com/salomeanta/8_Week_SQL_Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#problem-statement)
 
-[Case Study Questions](https://github.com/muryulia/8-Week-SQL-Challenge/blob/main/Case%20Study%20%231%20-%20Danny's%20Diner/Solution.md/#case-study-questions)
+[Case Study Questions](https://github.com/salomeanta/8_Week_SQL_Challenge/blob/Case-Study/Case%20Study%20%231%20-%20Danny's%20Diner%20/SOLUTION.md/#case-study-questions)
 
 [1. What is the total amount each customer spent at the restaurant?](https://github.com/muryulia/8-Week-SQL-Challenge/blob/main/Case%20Study%20%231%20-%20Danny's%20Diner/Solution.md/#1-what-is-the-total-amount-each-customer-spent-at-the-restaurant)
 
