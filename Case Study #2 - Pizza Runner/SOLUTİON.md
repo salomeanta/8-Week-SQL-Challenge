@@ -165,6 +165,17 @@ GROUP BY
   exclusions,
   extras;
 ````
+|   exclusions  |   extras    | number_of_pizzas |
+| ------------- | ----------- | ---------------- |
+|     2, 6      |     1, 4    |       1          |
+|      4        |  No extras  |       3          |
+| No exclusions |    1        |       2          |
+| No exclusions |  No extras  |       3          |
+| No exclusions |  No extras  |       2          |
+| No exclusions |  No extras  |       1          |
+
+
+
 ### 9.What was the total volume of pizzas ordered for each hour of the day?
 - *Günün her saati için sipariş edilen pizzaların toplam hacmi ne kadardı?*
 ````sql
