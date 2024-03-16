@@ -174,7 +174,7 @@ GROUP BY
 | No exclusions |  No extras  |       2          |
 | No exclusions |  No extras  |       1          |
 
-
+- *So,We only see this situation in a one pizza order*
 
 ### 9.What was the total volume of pizzas ordered for each hour of the day?
 - *Günün her saati için sipariş edilen pizzaların toplam hacmi ne kadardı?*
@@ -192,6 +192,14 @@ GROUP BY
 ORDER BY
 hour_of_day;
 ````
+| hour_of_day | total_pizzas |
+| ----------  | -------------|
+|    11       |      1       |
+|    13       |      3       |
+|    18       |      3       |
+|    19       |      1       |
+|    21       |      3       |
+|    23       |      3       |
 
 ### 10.What was the volume of orders for each day of the week?
 - *Haftanın her günü için sipariş hacmi neydi?*
@@ -217,5 +225,11 @@ WHERE
 GROUP BY
   EXTRACT(DOW FROM order_time)
 ORDER BY
+EXTRACT(DOW FROM order_time))
 ````
-  EXTRACT(DOW FROM order_time));
+|     days    | total_pizzas   |
+| ----------- | -------------- |
+| Wednesnday  | 5              |
+| Thursday    | 3              |
+| Friday      | 1              |
+| Saturday    | 5              |
