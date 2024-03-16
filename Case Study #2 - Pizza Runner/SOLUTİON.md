@@ -131,7 +131,7 @@ GROUP BY
 ````
 ### 9.What was the total volume of pizzas ordered for each hour of the day?
 - *Günün her saati için sipariş edilen pizzaların toplam hacmi ne kadardı?*
-````
+````sql
 
 SELECT
   EXTRACT(HOUR FROM order_time) AS hour_of_day,
