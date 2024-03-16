@@ -5,7 +5,9 @@ select
 count(order_id) as pizza_count
 from customer_orders
 ```
-
+| pizza_count |
+| ----------- |
+| 14          |
 
 ### 2.How many unique customer orders were made?
 - *Kaç tane benzersiz müşteri siparişi verildi?*
@@ -14,27 +16,34 @@ SELECT
 count(distinct customer_id) as unique_customer_count 
 from customer_orders
 ```
-
+| unique_customer_count |
+| --------------------- |
+| 5                     |
 
 ### 3.How many successful orders were delivered by each runner?
 - *Her koşucu tarafından kaç başarılı sipariş teslim edildi?*
 ```sql
 select runner_id,
-count(order_id)
+count(order_id) as delivered_orders
 from runner_orders 
 where pickup_time != 'null'
 and distance != 'null'
 and duration != 'null'
 group by 1
+order by 1
 ```
-
+| runner_id | delivered_orders |
+| --------- | ---------------- |
+| 1         | 4                |
+| 2         | 3                |
+| 3         | 1                |
 
 ### 4.How many of each type of pizza was delivered?
 - *Her pizza türünden kaç adet teslim edildi?*
 ````sql
 select c.pizza_id,
 p.pizza_name,
-count(c.order_id)
+count(c.order_id) as number_of_pizzas_delivered
 from customer_orders as c left join pizza_names as p on p.pizza_id=c.pizza_id
                           left join runner_orders as r on r.order_id = c.order_id
 WHERE
@@ -44,18 +53,32 @@ WHERE
 group by 1,2;
 
 ````
+|pizza_id| pizza_name | number_of_pizzas_delivered |
+|--------| ---------- | -------------------------- |
+|    1   | Meatlovers | 9                          |
+|    2   | Vegetarian | 3                          |
 
 ### 5.How many Vegetarian and Meatlovers were ordered by each customer?
 - *Her müşteri kaç tane Vejetaryen ve Etsever sipariş etti?*
 ````sql
 select c.customer_id,
 p.pizza_name,
-count(order_id)
+count(order_id) as number_of_pizzas_delivered
 from customer_orders as c left join pizza_names as p on p.pizza_id=c.pizza_id
 group by 1,2
 order by 1;
 ````
-
+  
+| customer_id | pizza_name | number_of_pizzas_delivered |
+| ----------- | ---------- | -------------------------- |
+| 101         | Meatlovers | 2                          |
+| 101         | Vegetarian | 1                          |
+| 102         | Meatlovers | 2                          |
+| 102         | Vegetarian | 1                          |
+| 103         | Meatlovers | 3                          |
+| 103         | Vegetarian | 1                          |
+| 104         | Meatlovers | 3                          |
+| 105         | Vegetarian | 1                          |
 
 
 ### 6.What was the maximum number of pizzas delivered in a single order?
@@ -63,7 +86,7 @@ order by 1;
 ````sql
 select 
 c.order_id,
-count(pizza_id) as pizzas_count
+count(pizza_id) as items_in_order
 from customer_orders as c 
            left join runner_orders as r on r.order_id = c.order_id
 WHERE
@@ -74,6 +97,9 @@ WHERE
   order by 2 desc
   limit 1;
  ````
+| order_id | items_in_order |
+| -------- | -------------- |
+| 4        | 3              |
 
 ### 7.For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
 - *Her müşteri için teslim edilen pizzalardan kaç tanesinde en az 1 değişiklik vardı ve kaç tanesinde değişiklik yoktu?*
@@ -104,7 +130,17 @@ WHERE
 
 
 ````
-
+| customer_id |  exclusions   |  extras   | number_of_pizzas|
+| ----------- | ------------  | --------- | ----------------|
+|   101	      | No exclusions | No extras |	2           |
+|   102	      | No exclusions |	No extras |	1           |
+|   102	      | No exclusions | No extras |	1           |
+|   102	      | No exclusions | No extras |     1           |
+|   103	      |     4         | No extras |	3           |
+|   104	      | No exclusions | No extras |	1           |
+|   104	      |     2, 6      |  1, 4	  |     1           |
+|   104	      | No exclusions |	   1	  |     1           |
+|   105	      | No exclusions |	   1	  |     1           |
 ### 8.How many pizzas were delivered that had both exclusions and extras?
 - *Hem istisnalar hem de ekstralar içeren kaç pizza teslim edildi?*
 ````sql
