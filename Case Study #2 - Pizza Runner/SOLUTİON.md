@@ -1,5 +1,5 @@
 ### 1.How many pizzas were ordered?
-#### 1.Kaç tane pizza sipariş edildi?
+- *Kaç tane pizza sipariş edildi?*
 ```sql
 select 
 count(order_id) as pizza_count
@@ -8,7 +8,7 @@ from customer_orders
 
 
 ### 2.How many unique customer orders were made?
-#### 2.Kaç tane benzersiz müşteri siparişi verildi?
+- *Kaç tane benzersiz müşteri siparişi verildi?*
 ```sql
 SELECT
 count(distinct customer_id) as unique_customer_count 
@@ -17,7 +17,7 @@ from customer_orders
 
 
 ### 3.How many successful orders were delivered by each runner?
-Her koşucu tarafından kaç başarılı sipariş teslim edildi?
+- *Her koşucu tarafından kaç başarılı sipariş teslim edildi?*
 ```sql
 select runner_id,
 count(order_id)
@@ -29,8 +29,9 @@ group by 1
 ```
 
 
---4)How many of each type of pizza was delivered?
---Her pizza türünden kaç adet teslim edildi?
+### 4.How many of each type of pizza was delivered?
+- *Her pizza türünden kaç adet teslim edildi?*
+````sql
 select c.pizza_id,
 p.pizza_name,
 count(c.order_id)
@@ -42,22 +43,24 @@ WHERE
   AND duration != 'null'
 group by 1,2;
 
+````
 
-
---5)How many Vegetarian and Meatlovers were ordered by each customer?
---Her müşteri kaç tane Vejetaryen ve Etsever sipariş etti?
+### 5.How many Vegetarian and Meatlovers were ordered by each customer?
+- *Her müşteri kaç tane Vejetaryen ve Etsever sipariş etti?*
+````sql
 select c.customer_id,
 p.pizza_name,
 count(order_id)
 from customer_orders as c left join pizza_names as p on p.pizza_id=c.pizza_id
 group by 1,2
 order by 1;
+````
 
 
 
-
---6)What was the maximum number of pizzas delivered in a single order?
---Tek bir siparişte teslim edilen maksimum pizza sayısı ne kadardı?
+### 6.What was the maximum number of pizzas delivered in a single order?
+- *Tek bir siparişte teslim edilen maksimum pizza sayısı ne kadardı?*
+````sql
 select 
 c.order_id,
 count(pizza_id) as pizzas_count
@@ -70,10 +73,11 @@ WHERE
   group by 1
   order by 2 desc
   limit 1;
+ ````
 
-
---7)For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
---Her müşteri için teslim edilen pizzalardan kaç tanesinde en az 1 değişiklik vardı ve kaç tanesinde değişiklik yoktu?
+### 7.For each customer, how many delivered pizzas had at least 1 change and how many had no changes?
+- *Her müşteri için teslim edilen pizzalardan kaç tanesinde en az 1 değişiklik vardı ve kaç tanesinde değişiklik yoktu?*
+````sql
   SELECT
     customer_id,
     CASE
@@ -99,10 +103,11 @@ WHERE
 	order by customer_id
 
 
+````
 
-
---8)How many pizzas were delivered that had both exclusions and extras?
---Hem istisnalar hem de ekstralar içeren kaç pizza teslim edildi?
+### 8.How many pizzas were delivered that had both exclusions and extras?
+- *Hem istisnalar hem de ekstralar içeren kaç pizza teslim edildi?*
+````sql
   SELECT
   CASE
     WHEN exclusions != '' and exclusions != 'null' THEN exclusions
@@ -123,8 +128,10 @@ WHERE
 GROUP BY
   exclusions,
   extras;
---9)What was the total volume of pizzas ordered for each hour of the day?
---Günün her saati için sipariş edilen pizzaların toplam hacmi ne kadardı?
+````
+### 9.What was the total volume of pizzas ordered for each hour of the day?
+- *Günün her saati için sipariş edilen pizzaların toplam hacmi ne kadardı?*
+````
 
 SELECT
   EXTRACT(HOUR FROM order_time) AS hour_of_day,
@@ -137,9 +144,11 @@ GROUP BY
   hour_of_day
 ORDER BY
 hour_of_day;
+````
 
---10)What was the volume of orders for each day of the week?
---Haftanın her günü için sipariş hacmi neydi?
+### 10.What was the volume of orders for each day of the week?
+- *Haftanın her günü için sipariş hacmi neydi?*
+````sql
 select 
 case when day_of_week=1 then 'Monday'
      when day_of_week =2 then 'Tuesday'
@@ -161,4 +170,5 @@ WHERE
 GROUP BY
   EXTRACT(DOW FROM order_time)
 ORDER BY
+````
   EXTRACT(DOW FROM order_time));
