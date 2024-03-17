@@ -49,3 +49,27 @@ The sample table has plan IDs, join the plan table to show plan names.
 | ------------------------- |
 | 1000                      |
 
+#### 2. What is the monthly distribution of trial plan start_date values for our dataset - use the start of the month as the group by value
+````sql
+select 
+date_trunc ('month',start_date)::date  as date_start,
+count(customer_id) as customer_count
+from subscriptions 
+where subscriptions.plan_id = 0
+group by 1
+order by 1
+````
+| date_start |  customer_count      |
+| ---------- |  ------------------- |
+| 2020-01-01 |  88                  |
+| 2020-02-01 |  68                  |
+| 2020-03-01 |  94                  |
+| 2020-04-01 |  81                  |
+| 2020-05-01 |  88                  |
+| 2020-06-01 |  79                  |
+| 2020-07-01 |  89                  |
+| 2020-08-01 |  88                  |
+| 2020-09-01 |  87                  |
+| 2020-10-01 |  79                  |
+| 2020-11-01 |  75                  |
+| 2020-12-01 |  84                  |
