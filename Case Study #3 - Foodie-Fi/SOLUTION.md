@@ -75,7 +75,8 @@ order by 1
 | 2020-12-01 |  84                  |
 
 #### 3.What plan start_date values occur after the year 2020 for our dataset? Show the breakdown by count of events for each plan_name
-`````sql
+
+````sql
 select
  plan_name,
 count(customer_id) as number_of_events
@@ -83,6 +84,7 @@ from subscriptions as s left join "plans" as p on p.plan_id = s.plan_id
 WHERE EXTRACT(YEAR FROM start_date) > 2020
   group by 1
 ````
+
 | plan_name     | number_of_events |
 | ------------- | ---------------- |
 | basic monthly | 8                |
